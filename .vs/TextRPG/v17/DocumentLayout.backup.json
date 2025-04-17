@@ -3,19 +3,19 @@
   "WorkspaceRootPath": "C:\\Sparta\\Work\\TextRPG\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F0628DA-17F4-4F3B-9CA8-EC45AC871EE8}|Practice_1_Week\\Practice_1_Week.csproj|c:\\sparta\\\uACFC\uC81C\\practice_1_week\\practice_1_week\\practice_3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F0628DA-17F4-4F3B-9CA8-EC45AC871EE8}|..\\..\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_1_Week.csproj|c:\\sparta\\\uACFC\uC81C\\practice_1_week\\practice_1_week\\nelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F0628DA-17F4-4F3B-9CA8-EC45AC871EE8}|Practice_1_Week\\Practice_1_Week.csproj|c:\\sparta\\\uACFC\uC81C\\practice_1_week\\practice_1_week\\nelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Sparta\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F0628DA-17F4-4F3B-9CA8-EC45AC871EE8}|Practice_1_Week\\Practice_1_Week.csproj|c:\\sparta\\\uACFC\uC81C\\practice_1_week\\practice_1_week\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Sparta\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F0628DA-17F4-4F3B-9CA8-EC45AC871EE8}|Practice_1_Week\\Practice_1_Week.csproj|c:\\sparta\\\uACFC\uC81C\\practice_1_week\\practice_1_week\\practice_4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Sparta\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F0628DA-17F4-4F3B-9CA8-EC45AC871EE8}|Practice_1_Week\\Practice_1_Week.csproj|c:\\sparta\\\uACFC\uC81C\\practice_1_week\\practice_1_week\\practice_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Sparta\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,49 +25,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Nelo.cs",
               "DocumentMoniker": "C:\\Sparta\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Nelo.cs",
               "RelativeDocumentMoniker": "..\\..\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Nelo.cs",
               "ToolTip": "C:\\Sparta\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Nelo.cs",
               "RelativeToolTip": "..\\..\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Nelo.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAQwFcAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAMMBAAAAAAAAAADwv1cAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-15T05:38:28.784Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Practice_4.cs",
               "DocumentMoniker": "C:\\Sparta\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_4.cs",
               "RelativeDocumentMoniker": "..\\..\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_4.cs",
               "ToolTip": "C:\\Sparta\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_4.cs",
               "RelativeToolTip": "..\\..\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_4.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-14T07:42:10.596Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Practice_3.cs",
               "DocumentMoniker": "C:\\Sparta\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_3.cs",
               "RelativeDocumentMoniker": "..\\..\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_3.cs",
               "ToolTip": "C:\\Sparta\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_3.cs",
               "RelativeToolTip": "..\\..\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_3.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T07:30:31.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T07:30:31.62Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Practice_2.cs",
               "DocumentMoniker": "C:\\Sparta\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_2.cs",
               "RelativeDocumentMoniker": "..\\..\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Practice_2.cs",
@@ -79,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Sparta\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Program.cs",
               "RelativeDocumentMoniker": "..\\..\\\uACFC\uC81C\\Practice_1_Week\\Practice_1_Week\\Program.cs",
