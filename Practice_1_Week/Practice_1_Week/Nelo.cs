@@ -20,6 +20,7 @@ public static class Program
         itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
         itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
         itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
+        itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
 
         // 게임 시작
         string Loading = "GaMe LOaDing . . .";
@@ -214,79 +215,76 @@ public class Menu
     public static void GameStart()
     {
         loop.Loop = true;
-
         do
         {
+            int num;
+
+            string input = Console.ReadLine();
+            bool Gstart = int.TryParse(input, out num);
+            Console.Clear();
+
             Console.WriteLine("드디어... 당신은 입장했습니다. 꿈과 희망이 가득한 NeRo World 에.");
             Console.WriteLine("이곳은 들어가기 전에 선택하는 창입니다.");
             Console.WriteLine("무엇을 하시겠습니까?");
 
 
-            Console.WriteLine("[1] 상태보기");
-            Console.WriteLine("[2] 인벤토리");
-            Console.WriteLine("[3] 상점");
-            Console.WriteLine("[0] 종료");
-
-            int num;
-
-            string input = Console.ReadLine();
-            bool Gstart = int.TryParse(input, out num);
-
+            Console.WriteLine("[1] 상태보기 \n[2] 인벤토리 \n[3] 상점 \n[0] 종료");
 
             if (Gstart)
             {
                 switch (num)
                 {
                     case 1:
-                        player.Gstart = "상태보기";
                         ShowStatus.Show();
                         break;
                     case 2:
-                        player.Gstart = "인벤토리";
                         Inventory.Show();
                         break;
                     case 3:
                         player.Gstart = "상점";
-                        ShopResult result = Shop.Show();
-
-                        switch (result)
+                        while (true)
                         {
-                            case ShopResult.Success:
-                                Console.WriteLine("\n 구매 성공!");
-                                break;
-                            case ShopResult.AlreadyPurchased:
-                                Console.WriteLine("\n 이미 구매한 아이템입니다.");
-                                break;
-                            case ShopResult.NotEnoughPoint:
-                                Console.WriteLine("\n 포인트가 부족합니다.");
-                                break;
-                            case ShopResult.InvalidInput:
-                                Console.WriteLine("\n 잘못된 입력입니다.");
-                                break;
-                            case ShopResult.Cancel:
-                                Console.WriteLine("\n 상점을 나갑니다.");
-                                break;
+                            ShopResult result = Shop.Show();
+                            {
+                                switch (result)
+                                {
+                                    case ShopResult.GoToStatus:
+                                        player.Gstart = "상태보기";
+                                        ShowStatus.Show();
+                                        Console.WriteLine("\n[0] 상점으로 돌아가기");
+                                        if (Console.ReadLine() == "0") continue;
+                                        break;
+                                    case ShopResult.GoToInventory:
+                                        player.Gstart = "인벤토리";
+                                        Inventory.Show();
+                                        Console.WriteLine("\n[0] 상점으로 돌아가기");
+                                        if (Console.ReadLine() == "0") continue;
+                                        break;
+                                    case ShopResult.Cancel:
+                                        goto ExitShop;
+                                    default:
+                                        break;
+                                }   
+                            }
+                            
                         }
+                        ExitShop:
                         break;
                     case 0:
                         Console.WriteLine("NeRo World에서 벗어납니다.");
                         Environment.Exit(0);
-                        break;
+                        return;
                     default:
                         Message.FailMessage();
                         continue;
                 }
-
                 Console.WriteLine("\n 처음 메뉴로 돌아가려면 아무 키나 누르세요. . .");
                 Console.ReadKey(); // 사용자 입력 대기
-                Console.Clear(); // 화면 정리
-
             }
             else
             {
                 Message.FailMessage();
             }
-
         } while (loop.Loop);
     }
 }
@@ -342,7 +340,7 @@ public class Shop
             Console.WriteLine(data.GetItemInfo());
         }
 
-        Console.WriteLine("[0] 나가기");
+        Console.WriteLine("\n[1-6] 아이템 구매 [7] 상태보기 [8] 인벤토리 [0] 나가기");
         Console.WriteLine("=========================");
         Console.WriteLine("\n 원하시는 행동을 입력해주세요");
 
@@ -353,8 +351,14 @@ public class Shop
         if (!valid)
         {
             Message.FailMessage();
-            return ShopResult.Cancel;
+            Thread.Sleep(1000);
+            return ShopResult.InvalidInput;
         }
+
+        if (choice == 7) return ShopResult.GoToStatus;
+        if (choice == 8) return ShopResult.GoToInventory;
+        if (choice == 0) return ShopResult.Cancel;
+
         if (choice == 0)
         {
             return ShopResult.Cancel;
@@ -461,5 +465,8 @@ public enum ShopResult
     AlreadyPurchased,
     NotEnoughPoint,
     InvalidInput,
-    Cancel
+    Cancel,
+    GoToStatus,
+    GoToInventory
+    
 }
