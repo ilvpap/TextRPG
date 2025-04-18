@@ -13,14 +13,14 @@ public static class Program
     {
         // 아이템 목록
         itemList = new List<Item>();
-        itemList.Add(new Item("피묻은 옷", "짐승의 것인지 사람의 것인지 모를 피가 말라 붙어있다.", ItemOption.DEFENSE, +5, 10));
-        itemList.Add(new Item("낡은 부적", "알 수없는 문자가 새겨져있다. 왠지 가지고 다니면 괜찮을 것 같다.", ItemOption.ATTACK, +5, 10));
-        itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
-        itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
-        itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
-        itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
-        itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
-        itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
+        itemList.Add(new Item("피묻은 옷", "짐승의 것인지 사람의 것인지 모를 피가 말라 붙어있다.", ItemOption.DEFENSE, +15, 100));
+        itemList.Add(new Item("낡은 부적", "알 수없는 문자가 새겨져있다. 웬지 가지고 다니면 괜찮을 것 같다.", ItemOption.ATTACK, +40, 350));
+        itemList.Add(new Item("누군가의 손수건", "누군가가 사용한 흔적이 있다. 손수건에는 알 수 없는 문양이 새겨져있다.", ItemOption.DEFENSE, +2, 10));
+        itemList.Add(new Item("도끼", "이상하다. 누군가가 날을 날카롭게 다듬어놓은 것 같다.", ItemOption.ATTACK, +20, 350));
+        itemList.Add(new Item("십자가", "보기에는 멀쩡해보이지만 무언가가 잘못됐다... 예수가 거꾸로 매달아져있다.", ItemOption.DEFENSE, +20, 1000));
+        itemList.Add(new Item("???", "※□△§ㅁ!?/-_?△〓＊", ItemOption.ATTACK, +1000000, 1000000));
+        itemList.Add(new Item("발가락", "사람의 발가락...? 자세히보니 인형의 발가락이다.", ItemOption.DEFENSE, +5, 10));
+        itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +30, 200));
 
         // 게임 시작
         string Loading = "GaMe LOaDing . . .";
@@ -205,11 +205,7 @@ public class Menu
                         break;
                 }
             }
-            else
-            {
-                Message.FailMessage();
-            }
-
+     
         } while (loop.Loop);
     }
     public static void GameStart()
@@ -217,18 +213,16 @@ public class Menu
         loop.Loop = true;
         do
         {
+
+            Console.WriteLine("드디어... 당신은 입장했습니다. 꿈과 희망이 가득한 NeRo World 에.\n");
+            Console.WriteLine("이곳은 들어가기 전에 선택하는 창입니다.\n");
+            Console.WriteLine("무엇을 하시겠습니까?\n\n\n");
+            Console.WriteLine("[1] 상태보기 \n[2] 인벤토리 \n[3] 상점 \n[0] 종료");
+
             int num;
 
             string input = Console.ReadLine();
             bool Gstart = int.TryParse(input, out num);
-            Console.Clear();
-
-            Console.WriteLine("드디어... 당신은 입장했습니다. 꿈과 희망이 가득한 NeRo World 에.");
-            Console.WriteLine("이곳은 들어가기 전에 선택하는 창입니다.");
-            Console.WriteLine("무엇을 하시겠습니까?");
-
-
-            Console.WriteLine("[1] 상태보기 \n[2] 인벤토리 \n[3] 상점 \n[0] 종료");
 
             if (Gstart)
             {
