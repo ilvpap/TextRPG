@@ -213,7 +213,7 @@ public class Menu
         loop.Loop = true;
         do
         {
-
+            Console.Clear();
             Console.WriteLine("드디어... 당신은 입장했습니다. 꿈과 희망이 가득한 NeRo World 에.\n");
             Console.WriteLine("이곳은 들어가기 전에 선택하는 창입니다.\n");
             Console.WriteLine("무엇을 하시겠습니까?\n\n\n");
