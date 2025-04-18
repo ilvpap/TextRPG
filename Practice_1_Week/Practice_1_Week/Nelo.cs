@@ -6,7 +6,6 @@ using System.Xml.Linq;
 using System.Security.Cryptography;
 using System.Security.Principal;
 
-
 public static class Program
 {
     public static List<Item> itemList;
@@ -298,30 +297,75 @@ public class ShowStatus
         Console.WriteLine($"이름 : {player.name}");
         Console.WriteLine($"직업 : {player.job}");
         Console.WriteLine("레벨 : 1");
-        Console.WriteLine("체력 : 100");
+        int atk = 10 + Inventory.EquippedItems.Where(i => i.Option == ItemOption.ATTACK).Sum(i => i.Value);
+        int def = 5 + Inventory.EquippedItems.Where(i => i.Option == ItemOption.DEFENSE).Sum(i => i.Value);
+        Console.WriteLine($"공격력 : {atk} (기본 10 + 장착 {atk - 10})");
+        Console.WriteLine($"방어력 : {def} (기본 5 + 장착 {def - 5})");
         Console.WriteLine("========================");
     }
 }
 
 public class Inventory
 {
+    public static List<Item> EquippedItems { get; } = new List<Item>();
     public static void Show()
     {
-        Console.Clear();
-        Console.WriteLine("======= 인벤토리 ========");
-        if (player.inventory.Count == 0)
+        while (true)
         {
-            Console.WriteLine("(Empty)");
+            Console.Clear();
+            Console.WriteLine("======= 인벤토리 ========");
+            Console.WriteLine("======= 인벤토리 ========");
 
-        }
-        else
-        {
-            foreach (var item in player.inventory)
+            foreach (var item in EquippedItems)
             {
-                Console.WriteLine(item.GetItemInfo());
+                Console.WriteLine(" " + item.GetItemInfo());
             }
+
+            Console.WriteLine("\n† 보유 아이템 (총 {0}개)", player.inventory.Count);
+            for (int i = 0; i < player.inventory.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {player.inventory[i].GetItemInfo()}");
+            }
+
+            Console.WriteLine("\n[1-{0}] 장착/해제 [0] 나가기", player.inventory.Count);
+            Console.ResetColor();
+            string input = Console.ReadLine();
+
+            if (input == "0") break;
+
+            if (int.TryParse(input, out int index) && index > 0 && index <= player.inventory.Count)
+            {
+                ToggleEquipment(player.inventory[index - 1]);
+            }
+            else
+            {
+                Message.Show("잘못된 입력입니다.", ConsoleColor.Red);
+            }
+            Thread.Sleep(500);
         }
-        Console.WriteLine("========================");
+    }
+    private static void ToggleEquipment(Item item)
+    {
+        var sameTypeItem = EquippedItems.FirstOrDefault(x => x.Option == item.Option);
+        if(sameTypeItem != null)
+        {
+            sameTypeItem.IsEquipped = true;
+            EquippedItems.Remove(sameTypeItem);
+
+            if(sameTypeItem != item)
+            {
+                item.IsEquipped = true;
+                EquippedItems.Add(item);
+                Message.Show($"[{item.Name}] 장착 완료!", ConsoleColor.Green);
+                return;
+            }
+
+            Message.Show($"[{item.Name}] 장착 해제!", ConsoleColor.Yellow);
+            return;
+        }
+        item.IsEquipped = true;
+        EquippedItems.Add(item);
+        Message.Show($"[{item.Name}] 장착 완료!", ConsoleColor.Green);
     }
 }
 
@@ -400,10 +444,6 @@ public enum ItemOption
 {
     ATTACK, DEFENSE
 }
-//public enum ItemName
-//{
-
-//}
 public class Item
 {
     private string name;
@@ -432,10 +472,15 @@ public class Item
         set => isPurchased = value;
     }
 
+    public bool IsEquipped { get; set; }
     public string GetItemInfo()
     {
         //return name + " " + description;
-        return $"[{name}] {description} ({itemOption} + {value}) - {price}P"; //왜 이렇게 나온거지?
+        string equipMark = IsEquipped ? "[E]" : "";
+        ConsoleColor color = IsEquipped ? ConsoleColor.Red : ConsoleColor.White;
+
+        Console.ForegroundColor = color;
+        return $"{equipMark}{name} | {description} ({Option} + {value}) - {price}P";
     }
 
 }
@@ -455,6 +500,12 @@ public class loop
 
 public class Message
 {
+    public static void Show(string text, ConsoleColor color)
+    {
+        Console.ForegroundColor = color;
+        Console.WriteLine("\n" + text);
+        Console.ResetColor();
+    }
     public static void FailMessage()
     {
         Console.WriteLine("\n알맞게 입력하십시오.\n");
