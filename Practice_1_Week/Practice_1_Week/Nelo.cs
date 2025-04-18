@@ -21,6 +21,7 @@ public static class Program
         itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
         itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
         itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
+        itemList.Add(new Item("화려한 부채", "누가 사용했던 부채인 것 같다. 알 수 없는 기운이 서려있다.", ItemOption.ATTACK, +5, 10));
 
         // 게임 시작
         string Loading = "GaMe LOaDing . . .";
